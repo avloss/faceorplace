@@ -16,4 +16,6 @@ RUN /anaconda2/bin/pip install tensorflow==1.2.1
 
 COPY faceorplace /faceorplace
 
+EXPOSE 8080
+
 CMD /anaconda2/bin/python faceorplace/server.py
