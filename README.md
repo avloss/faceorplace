@@ -38,11 +38,11 @@ Also, following image was classifies as "place", while it came from a "face" dat
 <img src="readme_content/face_1.jpg" width=400/>
 
 
-A small trick was used to make sure images with relatively smaller faces are correctly identified was used. The network was run twice, first on the original image, and the second time on the cropped centre of the image.
+A small trick to make sure images with relatively smaller faces are correctly identified was used. The network is run twice, first on the original image, and then on the cropped centre of the image.
 
 ## Starting the service
 
-The easiest way to run Face-vs-Place is by using Docker:
+The easiest way to run Face-vs-Place is by using Docker image:
 
 `docker run -it -p 8080:8080  avloss/faceorplace`
 
