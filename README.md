@@ -17,7 +17,7 @@ http://places.csail.mit.edu/
 4000 images from each dataset were kept. After some runs of the algorithm, some misclassified images from "places" data set stood out. After inspection, it became clear that many images in that dataset included faces. Some of them were manually removed before algorithm was re-trained.
 
 
-<img src="readme_content/mit_places_dataset_1.jpg"  style="width:300px;"/>
+<img src="readme_content/mit_places_dataset_1.jpg" width=400/>
 
 
 Here's final stats:
@@ -32,7 +32,7 @@ INFO:tensorflow:Final test accuracy = 98.3% (N=300)
 Also, following image was classifies as "place", while it came from a "face" dataset:
 
 
-<img src="readme_content/face_1.jpg" width=150 style="width:300px;"/>
+<img src="readme_content/face_1.jpg" width=400/>
 
 
 A small trick was used to make sure images with relatively smaller faces are correctly identified was used. The network was run twice, first on the original image, and the second time on the cropped centre of the image.
