@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="interview task for Onfido">
+    <meta name="author" content="@avloss">
+    <link rel="icon" href="static/favico.png">
+
+    <title>Face-vs-Place</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/narrow-jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link" href="https://avloss.com" target="_blank">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Face-vs-Place</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="display-3">Face-vs-Place</h1>
+        <h1 class="display-3"><i>{{ prediction }}</i></h1>
+
+        <p class="lead">select image to get it classified as a face (faces) or a place:</p>
+
+        <form action="/" method="post" enctype="multipart/form-data">
+
+          <label for="fileInput">Select image file:</label>
+
+
+          <input type="file" name="file_content" id="fileInput">
+
+          <br />
+          <br />
+
+        <p><input type="submit" class="btn btn-lg btn-success" value="Classify" /></p>
+        </form>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h2>Faces:</h2>
+          {% for img_url in imgs_faces %}
+            <img width="300px" src="{{ img_url }}" style="padding:10px"/>
+            <br />
+          {% endfor %}
+        </div>
+
+        <div class="col-lg-6">
+          <h2>Places:</h2>
+          {% for img_url in imgs_places %}
+            <img width="300px" src="{{ img_url }}"  style="padding:10px"/>
+            <br />
+          {% endfor %}
+        </div>
+      </div>
+
+
+
+      <footer class="footer">
+        <p>&copy; Created 22 July 2017 as a part of <img src="static/01_Onfido_Logo.png" width="100px"/> test task.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
