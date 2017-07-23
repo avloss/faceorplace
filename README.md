@@ -1,26 +1,29 @@
 # Face-or-Place
 
 The task was to create a Face-vs-Place classification algorithm.
-Arguably best approach for this task was transfer-learning. Google provides a nice script for this - https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/image_retraining
+Arguably best approach for this task was transfer-learning. Google provides a nice script for this:
+
+https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/image_retraining
+
 State of the art Inception V3 was used as a foundation Then its last layer was removed and the network was re-trained on faces/places dataset.
 Dataset was combined from different sources.
 
 ### Faces:
-http://pics.psych.stir.ac.uk/2D_face_sets.htm
-http://www.vision.caltech.edu/archive.html
-http://vis-www.cs.umass.edu/lfw/
-http://vintage.winklerbros.net/facescrub.html
+- http://pics.psych.stir.ac.uk/2D_face_sets.htm
+- http://www.vision.caltech.edu/archive.html
+- http://vis-www.cs.umass.edu/lfw/
+- http://vintage.winklerbros.net/facescrub.html
 
 ### Places:
-http://places.csail.mit.edu/
+- http://places.csail.mit.edu/
 
-4000 images from each dataset were kept. After some runs of the algorithm, some misclassified images from "places" data set stood out. After inspection, it became clear that many images in that dataset included faces. Some of them were manually removed before algorithm was re-trained.
+Only 4000 images from each dataset were kept. After some runs of the algorithm, some misclassified images from "places" data set stood out. After inspection, it became clear that many images in that dataset included faces. Some of them were manually removed before algorithm was re-trained.
 
 
 <img src="readme_content/mit_places_dataset_1.jpg" width=400/>
 
 
-Here's final stats:
+Here're final stats:
 ```
 INFO:tensorflow:2017-07-22 14:20:59.116129: Step 9999: Train accuracy = 100.0%
 INFO:tensorflow:2017-07-22 14:20:59.116309: Step 9999: Cross entropy = 0.013106
@@ -40,8 +43,11 @@ A small trick was used to make sure images with relatively smaller faces are cor
 ## Starting the service
 
 The easiest way to run Face-vs-Place is by using Docker:
-`docker run -it -p 8080:8080  avloss:faceorplace`
+
+`docker run -it -p 8080:8080  avloss/faceorplace`
+
 Then navigate to:
+
 http://localhost:8080
 
 It's also possible to pass an image location to the script, for instance using `curl`:
